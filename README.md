@@ -11,3 +11,5 @@
    
 Database: H2
 Database Console: http://localhost:8080/h2-console --> Click on Connect (no passwrod required)
+
+This application is developed using SpringBoot , Rest API, Angular JS.
