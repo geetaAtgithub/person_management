@@ -1,0 +1,65 @@
+	<div><a href="#persons"  style="font-size:20px">Person Management</a></div>
+	<h1>Address Management</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	
+	<form ng-submit="checkselection() && submitAddress()">
+		<table>
+			<tr>
+				<th colspan="2">Add/Edit Address</th>
+			</tr>
+			<tr>
+				<td>Person Id</td>
+				<td><input type="text" ng-model="personId" readonly /><span style="color:red;font-size:12px"></span></td>
+			</tr>
+			<tr>
+				<td>Street</td>
+				<td><input type="text" ng-model="addressForm.street" required/>&nbsp;<span style="color:red;font-size:12px">*</span></td>
+			</tr>
+			<tr>
+				<td>City</td>
+				<td><input type="text" ng-model="addressForm.city" required/>&nbsp;<span style="color:red;font-size:12px">*</span></td>
+			</tr>
+			<tr>
+				<td>State</td>
+				<td>
+				<select ng-model="addressForm.state" name="state" required>
+					 <option value="--Select--" selected="selected">--Select--</option> 
+   				 	<option ng-repeat="s in stateNames" value="{{s}}">{{s}}</option>
+				</select>&nbsp;* <span style="color:red;font-size:12px">{{msg}}</span></td>
+				
+			</tr>
+			
+			<tr>
+				<td>Postal Code</td>
+				<td><input type="text"  ng-model="addressForm.postalCode"  required/>&nbsp;<span style="color:red;font-size:12px">*</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Submit" style="align:center"
+					class="blue-button" /></td>
+			</tr>
+			
+		</table>
+	</form>
+	<br/><br/><br/>
+	<table>
+		<tr>
+			<th>Street</th>
+			<th>City</th>
+			<th>State</th>
+			<th>Postal Code</th>
+			<th>Operations</th>			
+		</tr>
+
+		<tr ng-repeat="address in addressList">
+
+			<td>{{ address.street }}</td>
+			<td>{{ address.city }}</td>			
+			<td>{{ address.state }}</td>
+			<td>{{ address.postalCode }}</td>
+
+			<td nowrap="nowrap"><a ng-click="editAddress(address)" class="blue-button">Edit</a>
+				| <a ng-click="deleteAddress(address)" class="red-button">Delete</a></td>
+		</tr>
+
+	</table>
+
