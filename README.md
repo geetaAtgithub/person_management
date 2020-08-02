@@ -1,6 +1,3 @@
-https://github.com/geetaAtgithub/person_management.git
-
-
 # person_management
 
 1. Clone the repository: https://github.com/geetaAtgithub/person_management.git
